@@ -73,3 +73,17 @@ R Packages:
 
 This workflow demonstrates a full data exploration pipeline in R — from reading multi-year Excel data to summarizing agricultural trends with reproducible plots.  
 It can be easily adapted for other crops, regions, or time spans by updating file paths and sheet structures.
+
+📌 Policy-Based Relevance
+
+This analysis supports evidence-based decision-making in Ontario’s agri-food sector by:
+
+Identifying top-producing and high-value counties to guide regional investment and support.
+
+Measuring production stability (CV) to inform risk management and crop insurance planning.
+
+Highlighting yield–price trends and long-term shifts in output/value relevant to market forecasting and sustainability.
+
+Providing a scalable workflow adaptable to other crops, regions, or policy needs.
+
+🏛️ Aligned with AAFC goals in agri-food competitiveness, risk management, and regional resilience.
