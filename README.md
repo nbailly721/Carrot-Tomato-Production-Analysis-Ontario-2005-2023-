@@ -18,7 +18,7 @@ Yearly Summaries & Trend Visualization
   - Combined comparison (both crops on shared facets)
 
 Top Producer Analysis
-- Identify top-5 counties by total farm value and total production for each crop.
+- Identify top 5 counties by total farm value and total production for each crop.
 - Examine overlap between top-value and top-production regions.
 - Generate time-series plots showing farm value and production trends among top-producing counties.
 
@@ -57,13 +57,21 @@ R Packages:
 - **janitor** – Cleaning and standardizing variable names  
 - **stringr** – String manipulation for extracting years  
 
-📊 Key Results
+📊 Key Results - Figures
 
-- Clear multi-year trends in carrot and tomato production, area, and farm value.  
-- Identification of the top-performing counties by production and economic value.  
-- Quantified variability (CV) to assess production stability across regions.  
-- Yield and price co-movement patterns highlight market and productivity shifts.  
-- Distinct contrasts between the 2005–2013 and 2014–2023 periods in both output and value.
+- Average Farm Value by Crop (2005–2013 vs. 2014–2023)
+- Average Production by Crop (2005–2013 vs. 2014–2023)
+- Comparison of Carrot and Tomato Trends Over Time
+- Farm Value of Tomatoes per Year (Top 5 Counties)
+- Farm Value of Carrots per Year (Top 5 Counties)
+- Production of Carrots per Year (Top 5 Counties)
+- Production of Tomatoes per Year (Top 5 Counties)
+- Trends in Carrot Production, Area, and Value Over Time
+- Trends in Tomato Production, Area, and Value Over Time
+- Variability in Carrot Production by County
+- Variability in Carrot Value by County
+- Variability in Tomato Production by County
+- Variability in Tomato Value by County
 
 📂 Files
 
