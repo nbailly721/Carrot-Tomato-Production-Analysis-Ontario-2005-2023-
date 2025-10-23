@@ -28,8 +28,8 @@ library('stringr')
 
 # __ File locations  ----------
 
-carrot_file<- '/Users/nicolasbailly/Documents/side_projects/agriculture/datasets/carrots.xlsx'
-tomato_file <- '/Users/nicolasbailly/Documents/side_projects/agriculture/datasets/tomatoes.xlsx'
+carrot_file<- '..../data/datasets/carrots.xlsx'
+tomato_file <- '.../data/tomatoes.xlsx'
 
 # __ Discover sheets  ----------
 carrot_sheets <- excel_sheets(carrot_file)
