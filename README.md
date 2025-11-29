@@ -75,6 +75,7 @@ Calculate mean production and farm value for both crops in each period.
 Visualize long-term differences using side-by-side bar charts.
 
 **Datasets Used** 
+
 Primary Dataset: Ontario Fruit and Vegetable Production Data
 Source: https://data.ontario.ca/dataset/ontario-fruit-and-vegetable-production
 
