@@ -1,97 +1,168 @@
                                   #### Carrot & Tomato Production Analysis (Ontario, 2005–2023) ####
--This project performs an end-to-end exploratory analysis of carrot and tomato production in Ontario using multi-year Excel data (one sheet per year). The workflow integrates data ingestion, cleaning, summarization, visualization, and statistical comparison across counties/districts.
+**Description**
 
-🖥️ Workflow Overview
+This project performs an end-to-end exploratory analysis of carrot and tomato production in Ontario from 2005–2023 using multi-year Excel data (one sheet per year). It integrates data ingestion, cleaning, summarization, visualization, and comparative statistical analysis across counties and districts. The workflow evaluates long-term production trends, top-producing regions, variability in output and value, yield–price dynamics, and long-term shifts across two major agricultural periods.
 
-Data Ingestion & Cleaning (R Script)
-- Load multi-year crop data from Excel workbooks (`carrots.xlsx` and `tomatoes.xlsx`), each containing one sheet per year.
-- Use `readxl` to list and read all sheets dynamically.
-- Clean and standardize variable names with `janitor::clean_names()`.
-- Attach a `year` column extracted from each sheet name using `stringr::str_extract()`.
-- Remove incomplete records and province-level aggregates to focus on county/district detail.
+**Workflow Overview**
+  1. Data Ingestion & Preparation (R)
 
-Yearly Summaries & Trend Visualization
-- Compute total harvested area, marketed production, and farm value per year.
-- Convert to long (tidy) format for easy faceted visualization.
-- Plot time-series trends using `ggplot2` for:
-  - Individual crops (carrots, tomatoes)
-  - Combined comparison (both crops on shared facets)
+Load multi-year Excel workbooks (carrots.xlsx, tomatoes.xlsx), each containing one sheet per year.
 
-Top Producer Analysis
-- Identify top 5 counties by total farm value and total production for each crop.
-- Examine overlap between top-value and top-production regions.
-- Generate time-series plots showing farm value and production trends among top-producing counties.
+Use readxl to dynamically list and import all sheets.
 
-Variability & Resilience
-- Calculate the **coefficient of variation (CV)** for each county’s production and farm value to measure stability across years.
-- Visualize CV rankings with horizontal bar charts (low CV = more stable production).
+Clean and standardize column names using janitor::clean_names().
 
-Yield vs. Price Dynamics
-- Aggregate average yield (000 lbs/acre) and average price ($/lb) per year.
-- Compare yield–price trends across crops using faceted line plots.
+Extract year values from sheet names using stringr::str_extract().
 
-Long-Term Period Comparison
-- Split the dataset into two eras: **2005–2013** and **2014–2023**.
-- Calculate mean production and farm value for each period and crop.
-- Plot side-by-side bar charts to visualize long-term shifts in productivity and value.
+Remove incomplete or aggregated (province-level) rows to focus on county/district data.
 
-📁 Dataset
-Excel workbooks (each with multiple sheets, one per year):
+   2. Yearly Summaries & Trend Visualization
 
-- `carrots.xlsx`; `tomatoes.xlsx` (source:https://data.ontario.ca/dataset/ontario-fruit-and-vegetable-production)  
+Compute yearly totals for harvested area, marketed production, and farm value.
 
-Each sheet contains:
-- County/District names  
-- Harvested area (acres)  
-- Average yield (000 lbs/acre)  
-- Marketed production (000 lbs)  
-- Average price (cents/lb)  
-- Farm value (000 $)
+Convert datasets into tidy long format for visualization.
 
-🔧 Tools & Packages
+Generate time-series plots using ggplot2 for:
 
-R Packages:
-- **readxl** – Read Excel files and sheet metadata  
-- **tidyverse** – Data manipulation, summarization, and reshaping  
-- **ggplot2** – Visualization and trend analysis  
-- **janitor** – Cleaning and standardizing variable names  
-- **stringr** – String manipulation for extracting years  
+Carrot trends
 
-📊 Key Results - Figures
+Tomato trends
 
-- Average Farm Value by Crop (2005–2013 vs. 2014–2023)
-- Average Production by Crop (2005–2013 vs. 2014–2023)
-- Comparison of Carrot and Tomato Trends Over Time
-- Farm Value of Tomatoes per Year (Top 5 Counties)
-- Farm Value of Carrots per Year (Top 5 Counties)
-- Production of Carrots per Year (Top 5 Counties)
-- Production of Tomatoes per Year (Top 5 Counties)
-- Trends in Carrot Production, Area, and Value Over Time
-- Trends in Tomato Production, Area, and Value Over Time
-- Variability in Carrot Production by County
-- Variability in Carrot Value by County
-- Variability in Tomato Production by County
-- Variability in Tomato Value by County
+Combined crop comparisons (shared facets)
 
-📂 Files
+    3. Top Producer Analysis
 
-- `carrot_tomato_analysis.R`: Complete R script covering data ingestion, cleaning, visualization, and statistical analysis.
+Identify top 5 counties by:
 
-🧠 Notes
+Total farm value
 
-This workflow demonstrates a full data exploration pipeline in R — from reading multi-year Excel data to summarizing agricultural trends with reproducible plots.  
-It can be easily adapted for other crops, regions, or time spans by updating file paths and sheet structures.
+Total marketed production
 
-📌 Policy-Based Relevance
+Analyze overlap between top-value and top-production regions.
 
-This analysis supports evidence-based decision-making in Ontario’s agri-food sector by:
+Produce time-series visualizations for top regions for both crops.
 
-Identifying top-producing and high-value counties to guide regional investment and support.
+    4. Variability & Resilience
 
-Measuring production stability (CV) to inform risk management and crop insurance planning.
+Calculate coefficient of variation (CV) for each county’s:
 
-Highlighting yield–price trends and long-term shifts in output/value relevant to market forecasting and sustainability.
+Production
 
-Providing a scalable workflow adaptable to other crops, regions, or policy needs.
+Farm value
 
-🏛️ Aligned with AAFC goals in agri-food competitiveness, risk management, and regional resilience.
+Visualize production and value stability across counties (lower CV = more stable performance).
+
+    5. Yield vs. Price Dynamics
+
+Compute yearly averages for:
+
+Yield (000 lbs/acre)
+
+Price (cents/lb)
+
+Visualize yield–price relationships using faceted line plots.
+
+     6. Long-Term Period Comparison
+
+Divide the dataset into:
+
+2005–2013
+
+2014–2023
+
+Calculate mean production and farm value for both crops in each period.
+
+Visualize long-term differences using side-by-side bar charts.
+
+**Datasets Used** 
+Primary Dataset: Ontario Fruit and Vegetable Production Data
+Source: https://data.ontario.ca/dataset/ontario-fruit-and-vegetable-production
+
+Processed/Generated Files
+
+carrots.xlsx – Multi-year county-level carrot production (one sheet per year)
+
+tomatoes.xlsx – Multi-year county-level tomato production (one sheet per year)
+
+Each sheet includes:
+
+County/District
+
+Harvested area (acres)
+
+Average yield (000 lbs/acre)
+
+Marketed production (000 lbs)
+
+Average price (cents/lb)
+
+Farm value (000 $)
+
+**Packages Used**
+R Packages
+
+readxl – Import Excel files and sheet metadata
+
+tidyverse – Data manipulation, reshaping, visualization
+
+ggplot2 – Time-series and comparative plotting
+
+janitor – Standardizing column names
+
+stringr – Extracting year metadata
+
+Bash / Unix Tools
+
+(None required beyond R execution environment)
+
+**Key Results**
+
+Average Farm Value (2005–2013 vs. 2014–2023)
+
+Average Production (2005–2013 vs. 2014–2023)
+
+Comparison of Carrot vs. Tomato Trends Over Time
+
+Farm Value of Tomatoes – Top 5 Counties
+
+Farm Value of Carrots – Top 5 Counties
+
+Production of Carrots – Top 5 Counties
+
+Production of Tomatoes – Top 5 Counties
+
+Trend Analysis: Production, Area, and Value (for each crop)
+
+Variability Analyses:
+
+Carrot Production CV by County
+
+Carrot Value CV by County
+
+Tomato Production CV by County
+
+Tomato Value CV by County
+
+**Files in This Repository**
+
+carrot_tomato_analysis.R – Full R workflow for ingestion, cleaning, exploration, and visualization.
+
+**Important Notes**
+
+This workflow provides a reproducible pipeline for exploring multi-year agricultural datasets in R.
+
+Easily adaptable to other crops, regions, or year ranges by updating file paths and sheet structures.
+
+Visualizations and analyses are fully automated once the Excel data structure is standardized.
+
+**Real-World Relevance**
+
+Supports evidence-based decision-making for Ontario’s agri-food sector.
+
+Identifies top-producing and high-value counties, informing investment and regional planning.
+
+Measures long-term production stability to support risk management and crop insurance strategies.
+
+Highlights yield–price relationships relevant to market forecasting and sustainability.
+
+Provides a scalable, reproducible workflow useful for policy, agricultural economics, and regional planning.
