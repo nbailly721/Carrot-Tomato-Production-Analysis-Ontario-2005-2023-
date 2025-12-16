@@ -147,7 +147,7 @@ Tomato Value CV by County
 
 **Files in This Repository**
 
-carrot_tomato_analysis.R – Full R workflow for ingestion, cleaning, exploration, and visualization.
+`carrot_tomato_analysis.R` – Full R workflow for ingestion, cleaning, exploration, and visualization.
 
 **Important Notes**
 
